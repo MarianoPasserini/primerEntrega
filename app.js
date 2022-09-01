@@ -200,10 +200,37 @@ function mostrarAlmacenamiento(hddLowEnd,hddMidEnd,hddHighEnd,ssdLowEnd,ssdMidEn
 
     }
 
+// Ahora creo el storage para guardar los datos de los productos
+
+localStorage.setItem("gpuLowEnd", JSON.stringify(gpuLowEnd));
+localStorage.setItem("gpuMidEnd", JSON.stringify(gpuMidEnd));
+localStorage.setItem("gpuHighEnd", JSON.stringify(gpuHighEnd));
+localStorage.setItem("hddLowEnd", JSON.stringify(hddLowEnd));
+localStorage.setItem("hddMidEnd", JSON.stringify(hddMidEnd));
+localStorage.setItem("hddHighEnd", JSON.stringify(hddHighEnd));
+localStorage.setItem("ssdLowEnd", JSON.stringify(ssdLowEnd));
+localStorage.setItem("ssdMidEnd", JSON.stringify(ssdMidEnd));
+localStorage.setItem("ssdHighEnd", JSON.stringify(ssdHighEnd));
+localStorage.setItem("motherboardAMD", JSON.stringify(motherboardAMD));
+localStorage.setItem("motherboardIntel", JSON.stringify(motherboardIntel));
+localStorage.setItem("ram8gb", JSON.stringify(ram8gb));
+localStorage.setItem("ram16gb", JSON.stringify(ram16gb));
+localStorage.setItem("ram32gb", JSON.stringify(ram32gb));
+localStorage.setItem("fuenteLowEnd", JSON.stringify(fuenteLowEnd));
+localStorage.setItem("fuenteMidEnd", JSON.stringify(fuenteMidEnd));
+localStorage.setItem("fuenteHighEnd", JSON.stringify(fuenteHighEnd));
+localStorage.setItem("cpuLowEndAMD", JSON.stringify(cpuLowEndAMD));
+localStorage.setItem("cpuMidEndAMD", JSON.stringify(cpuMidEndAMD));
+localStorage.setItem("cpuHighEndAMD", JSON.stringify(cpuHighEndAMD));
+localStorage.setItem("cpuLowEndIntel", JSON.stringify(cpuLowEndIntel));
+localStorage.setItem("cpuMidEndIntel", JSON.stringify(cpuMidEndIntel));
+localStorage.setItem("cpuHighEndIntel", JSON.stringify(cpuHighEndIntel));
+localStorage.setItem("gabinete", JSON.stringify(gabinete));
+
 //FUNCION PARA MOSTRAR EL CARRITO Y EL TOTAL DE LA COMPRA
 
 
- for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 2; i++) {
     mostrarGpu(gpuLowEnd, gpuMidEnd, gpuHighEnd, carrito)
     mostrarAlmacenamiento(hddLowEnd, hddMidEnd, hddHighEnd, ssdLowEnd, ssdMidEnd, ssdHighEnd, carrito)
     mostrarMother(motherboardAMD, motherboardAMD, carrito)
@@ -215,3 +242,30 @@ function mostrarAlmacenamiento(hddLowEnd,hddMidEnd,hddHighEnd,ssdLowEnd,ssdMidEn
 }
 
 alert("El total de su compra es: " + carrito.reduce((a, b) => a + b, 0));
+
+// Ahora procedo a utilizar el get item para mostrar los datos de los productos
+
+let gpuLowEndGetter = JSON.parse(localStorage.getItem("gpuLowEnd"));
+let gpuMidEndGetter = JSON.parse(localStorage.getItem("gpuMidEnd"));
+let gpuHighEndGetter = JSON.parse(localStorage.getItem("gpuHighEnd"));
+let hddLowEndGetter = JSON.parse(localStorage.getItem("hddLowEnd"));
+let hddMidEndGetter = JSON.parse(localStorage.getItem("hddMidEnd"));
+let hddHighEndGetter = JSON.parse(localStorage.getItem("hddHighEnd"));
+let ssdLowEndGetter = JSON.parse(localStorage.getItem("ssdLowEnd"));
+let ssdMidEndGetter = JSON.parse(localStorage.getItem("ssdMidEnd"));
+let ssdHighEndGetter = JSON.parse(localStorage.getItem("ssdHighEnd"));
+let motherboardAMDGetter = JSON.parse(localStorage.getItem("motherboardAMD"));
+let motherboardIntelGetter = JSON.parse(localStorage.getItem("motherboardIntel"));
+let ram8gbGetter = JSON.parse(localStorage.getItem("ram8gb"));
+let ram16gbGetter = JSON.parse(localStorage.getItem("ram16gb"));
+let ram32gbGetter = JSON.parse(localStorage.getItem("ram32gb"));
+let fuenteLowEndGetter = JSON.parse(localStorage.getItem("fuenteLowEnd"));
+let fuenteMidEndGetter = JSON.parse(localStorage.getItem("fuenteMidEnd"));
+let fuenteHighEndGetter = JSON.parse(localStorage.getItem("fuenteHighEnd"));
+let cpuLowEndAMDGetter = JSON.parse(localStorage.getItem("cpuLowEndAMD"));
+let cpuMidEndAMDGetter = JSON.parse(localStorage.getItem("cpuMidEndAMD"));
+let cpuHighEndAMDGetter = JSON.parse(localStorage.getItem("cpuHighEndAMD"));
+let cpuLowEndIntelGetter = JSON.parse(localStorage.getItem("cpuLowEndIntel"));
+let cpuMidEndIntelGetter = JSON.parse(localStorage.getItem("cpuMidEndIntel"));
+let cpuHighEndIntelGetter = JSON.parse(localStorage.getItem("cpuHighEndIntel"));
+let gabineteGetter = JSON.parse(localStorage.getItem("gabinete"));
